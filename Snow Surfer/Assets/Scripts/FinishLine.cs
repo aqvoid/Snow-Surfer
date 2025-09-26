@@ -25,6 +25,6 @@ public class FinishLine : MonoBehaviour
 
     private void NextScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
