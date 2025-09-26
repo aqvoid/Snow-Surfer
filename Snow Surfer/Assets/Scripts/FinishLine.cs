@@ -4,6 +4,13 @@ using UnityEngine.SceneManagement;
 public class FinishLine : MonoBehaviour
 {
     [SerializeField] private int restartDelay = 1;
+    
+    private ParticleSystem finishParticles;
+
+    private void Awake()
+    {
+        finishParticles = GetComponentInChildren<ParticleSystem>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,12 +18,13 @@ public class FinishLine : MonoBehaviour
 
         if (collision.gameObject.layer == layerIndex)
         {
+            finishParticles.Play();
             Invoke("NextScene", restartDelay);
         }
     }
 
     private void NextScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
