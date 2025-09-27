@@ -9,7 +9,7 @@ public class CrashDetector : MonoBehaviour
 
     private void Awake()
     {
-        crashParticles = GetComponentInChildren<ParticleSystem>();
+        crashParticles = transform.Find("Crash Particles").GetComponent<ParticleSystem>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
