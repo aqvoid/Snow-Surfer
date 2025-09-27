@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private InputAction moveAction;
+    private bool canMove = true;
 
     private void Awake()
     {
@@ -30,8 +31,11 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 moveVector = moveAction.ReadValue<Vector2>();
 
-        ChangeTorque(moveVector);
-        BoostPlayer(moveVector);
+        if (canMove)
+        {
+            ChangeTorque(moveVector);
+            BoostPlayer(moveVector);
+        }
     }
 
     private void ChangeTorque(Vector2 moveVector)
@@ -46,4 +50,5 @@ public class PlayerController : MonoBehaviour
         else effector.speed = baseSpeed;
     }
 
+    public void DisableControls() => canMove = false;
 }
