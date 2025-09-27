@@ -12,11 +12,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("=== References ===")]
     [SerializeField] private SurfaceEffector2D effector;
+    [SerializeField] private ScoreManager scoreManager;
 
     private Rigidbody2D rb;
     private InputAction moveAction;
     private bool canMove = true;
-    private int flipCount;
+
     private float startAngle;
     private float totalAngle;
 
@@ -62,7 +63,8 @@ public class PlayerController : MonoBehaviour
 
         if (totalAngle > 350f || totalAngle < -350f)
         {
-            flipCount++;
+            scoreManager.AddFlips(1);
+            scoreManager.AddScore(100);
             totalAngle = 0f;
         }
 
@@ -70,4 +72,5 @@ public class PlayerController : MonoBehaviour
     }
 
     public void DisableControls() => canMove = false;
+
 }
