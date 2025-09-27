@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private InputAction moveAction;
     private bool canMove = true;
+    private int flipCount;
+    private float startAngle;
+    private float totalAngle;
 
     private void Awake()
     {
@@ -35,6 +38,7 @@ public class PlayerController : MonoBehaviour
         {
             ChangeTorque(moveVector);
             BoostPlayer(moveVector);
+            CalculateFlips();
         }
     }
 
@@ -48,6 +52,21 @@ public class PlayerController : MonoBehaviour
     {
         if (moveVector.y > 0f) effector.speed = boostSpeed;
         else effector.speed = baseSpeed;
+    }
+
+    private void CalculateFlips()
+    {
+        float currentAngle = transform.rotation.eulerAngles.z;
+
+        totalAngle += Mathf.DeltaAngle(startAngle, currentAngle);
+
+        if (totalAngle > 350f || totalAngle < -350f)
+        {
+            flipCount++;
+            totalAngle = 0f;
+        }
+
+        startAngle = currentAngle;
     }
 
     public void DisableControls() => canMove = false;
