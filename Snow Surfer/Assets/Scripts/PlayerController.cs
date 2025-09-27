@@ -1,13 +1,19 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("=== Rotation ===")]
     [SerializeField] private float torqueAmount = 1f;
 
-    private Rigidbody2D rb;
+    [Header("=== Movement ===")]
+    [SerializeField] private float baseSpeed = 17f;
+    [SerializeField] private float boostSpeed = 24f;
 
+    [Header("=== References ===")]
+    [SerializeField] private SurfaceEffector2D effector;
+
+    private Rigidbody2D rb;
     private InputAction moveAction;
 
     private void Awake()
@@ -22,16 +28,22 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 moveVector;
-        moveVector = moveAction.ReadValue<Vector2>();
+        Vector2 moveVector = moveAction.ReadValue<Vector2>();
 
         ChangeTorque(moveVector);
+        BoostPlayer(moveVector);
     }
 
     private void ChangeTorque(Vector2 moveVector)
     {
         if (moveVector.x > 0f) rb.AddTorque(-torqueAmount);
         else if (moveVector.x < 0f) rb.AddTorque(torqueAmount);
+    }
+
+    private void BoostPlayer(Vector2 moveVector)
+    {
+        if (moveVector.y > 0f) effector.speed = boostSpeed;
+        else effector.speed = baseSpeed;
     }
 
 }
