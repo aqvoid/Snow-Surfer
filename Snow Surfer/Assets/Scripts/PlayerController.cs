@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float baseSpeed = 17f;
     [SerializeField] private float boostSpeed = 24f;
 
+    [Header("=== Particles ===")]
+    [SerializeField] private ParticleSystem powerupParticles;
+
     [Header("=== References ===")]
     [SerializeField] private SurfaceEffector2D effector;
     [SerializeField] private ScoreManager scoreManager;
@@ -21,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     private float startAngle;
     private float totalAngle;
+
+    private int activePowerupCount;
 
     private void Awake()
     {
@@ -74,6 +79,9 @@ public class PlayerController : MonoBehaviour
 
     public void ActivatePowerup(PowerupSO powerup)
     {
+        powerupParticles.Play();
+        activePowerupCount++;
+
         switch (powerup.GetPowerupType())
         {
             case "speed":
@@ -91,6 +99,9 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DeactivatePowerup(PowerupSO powerup)
     {
         yield return new WaitForSeconds(powerup.GetTime());
+
+        activePowerupCount--;
+        if (activePowerupCount == 0) powerupParticles.Stop();
 
         switch (powerup.GetPowerupType())
         {
