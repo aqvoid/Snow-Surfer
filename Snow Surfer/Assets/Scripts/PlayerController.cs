@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float baseSpeed = 17f;
     [SerializeField] private float boostSpeed = 24f;
 
+    [Header("=== Particles ===")]
+    [SerializeField] private ParticleSystem powerupParticles;
+
     [Header("=== References ===")]
     [SerializeField] private SurfaceEffector2D effector;
     [SerializeField] private ScoreManager scoreManager;
@@ -20,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     private float startAngle;
     private float totalAngle;
+
+    private int activePowerupCount;
 
     private void Awake()
     {
@@ -69,6 +75,44 @@ public class PlayerController : MonoBehaviour
         }
 
         startAngle = currentAngle;
+    }
+
+    public void ActivatePowerup(PowerupSO powerup)
+    {
+        powerupParticles.Play();
+        activePowerupCount++;
+
+        switch (powerup.GetPowerupType())
+        {
+            case "speed":
+                baseSpeed += powerup.GetValueChange();
+                boostSpeed += powerup.GetValueChange();
+                break;
+            case "torque":
+                torqueAmount += powerup.GetValueChange();
+                break;
+        }
+
+        StartCoroutine(DeactivatePowerup(powerup));
+    }
+
+    private IEnumerator DeactivatePowerup(PowerupSO powerup)
+    {
+        yield return new WaitForSeconds(powerup.GetTime());
+
+        activePowerupCount--;
+        if (activePowerupCount == 0) powerupParticles.Stop();
+
+        switch (powerup.GetPowerupType())
+        {
+            case "speed":
+                baseSpeed -= powerup.GetValueChange();
+                boostSpeed -= powerup.GetValueChange();
+                break;
+            case "torque":
+                torqueAmount -= powerup.GetValueChange();
+                break;
+        }
     }
 
     public void DisableControls() => canMove = false;
