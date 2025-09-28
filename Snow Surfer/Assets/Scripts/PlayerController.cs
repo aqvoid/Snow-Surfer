@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -69,6 +70,38 @@ public class PlayerController : MonoBehaviour
         }
 
         startAngle = currentAngle;
+    }
+
+    public void ActivatePowerup(PowerupSO powerup)
+    {
+        switch (powerup.GetPowerupType())
+        {
+            case "speed":
+                baseSpeed += powerup.GetValueChange();
+                boostSpeed += powerup.GetValueChange();
+                break;
+            case "torque":
+                torqueAmount += powerup.GetValueChange();
+                break;
+        }
+
+        StartCoroutine(DeactivatePowerup(powerup));
+    }
+
+    private IEnumerator DeactivatePowerup(PowerupSO powerup)
+    {
+        yield return new WaitForSeconds(powerup.GetTime());
+
+        switch (powerup.GetPowerupType())
+        {
+            case "speed":
+                baseSpeed -= powerup.GetValueChange();
+                boostSpeed -= powerup.GetValueChange();
+                break;
+            case "torque":
+                torqueAmount -= powerup.GetValueChange();
+                break;
+        }
     }
 
     public void DisableControls() => canMove = false;
