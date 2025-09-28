@@ -1,3 +1,6 @@
+# C# is the main language
+*.cs linguist-language=C#
+
 # Ignoring Unity service files
 ProjectSettings/* linguist-vendored
 Packages/* linguist-vendored
