@@ -1,0 +1,5 @@
+# Ignoring Unity service files
+ProjectSettings/* linguist-vendored
+Packages/* linguist-vendored
+*.shader linguist-vendored
+*.hlsl linguist-vendored
