@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 8412141419393354235}
   - component: {fileID: 6533358642255108419}
   - component: {fileID: 9119312551399658760}
-  - component: {fileID: 459412276921186950}
-  - component: {fileID: 3433455172053573088}
+  - component: {fileID: 997793435533671186}
   m_Layer: 7
   m_Name: Short Low 5
   m_TagString: Untagged
@@ -213,8 +212,8 @@ MonoBehaviour:
   - {x: 20, y: -50}
   - {x: 0, y: -50}
   m_ShadowSegment: []
---- !u!68 &459412276921186950
-EdgeCollider2D:
+--- !u!60 &997793435533671186
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -244,66 +243,54 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_CompositeOperation: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 1
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: 0, y: -50}
-  - {x: 0, y: -0.637037}
-  - {x: -0.5357203, y: 0.65347433}
-  - {x: 0.0073900223, y: 1.0034676}
-  - {x: 0.93050057, y: 1.3741093}
-  - {x: 1.7038714, y: 1.464357}
-  - {x: 2.4693089, y: 1.4133708}
-  - {x: 3.2201357, y: 1.2566279}
-  - {x: 3.9583688, y: 1.0236815}
-  - {x: 4.687317, y: 0.7384169}
-  - {x: 5.4086885, y: 0.4215115}
-  - {x: 6.8252316, y: -0.23095334}
-  - {x: 7.5140696, y: -0.5296931}
-  - {x: 8.18292, y: -0.78641677}
-  - {x: 8.824566, y: -0.9847855}
-  - {x: 9.430938, y: -1.1109605}
-  - {x: 10, y: -1.155}
-  - {x: 10.569062, y: -1.1109606}
-  - {x: 11.175434, y: -0.98478556}
-  - {x: 11.817081, y: -0.78641665}
-  - {x: 12.485931, y: -0.52969337}
-  - {x: 13.174767, y: -0.23095322}
-  - {x: 14.5913105, y: 0.42151147}
-  - {x: 15.312683, y: 0.73841727}
-  - {x: 16.041632, y: 1.0236814}
-  - {x: 16.779865, y: 1.2566283}
-  - {x: 17.530693, y: 1.4133708}
-  - {x: 18.296127, y: 1.464357}
-  - {x: 19.0695, y: 1.374109}
-  - {x: 19.641682, y: 1.1803968}
-  - {x: 19.82725, y: 1.1095043}
-  - {x: 20.53572, y: 0.65347433}
-  - {x: 20, y: 0}
-  - {x: 20, y: -50}
-  - {x: 0, y: -50}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!252 &3433455172053573088
-SurfaceEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976481263086930430}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Speed: 17
-  m_SpeedVariation: 0
-  m_ForceScale: 1
-  m_UseContactForce: 0
-  m_UseFriction: 1
-  m_UseBounce: 1
+    m_Paths:
+    - - {x: 0, y: -50}
+      - {x: 0, y: -0.637037}
+      - {x: -0.5357203, y: 0.65347433}
+      - {x: 0.0073900223, y: 1.0034676}
+      - {x: 0.93050057, y: 1.3741093}
+      - {x: 1.7038714, y: 1.464357}
+      - {x: 2.4693089, y: 1.4133708}
+      - {x: 3.2201357, y: 1.2566279}
+      - {x: 3.9583688, y: 1.0236815}
+      - {x: 4.687317, y: 0.7384169}
+      - {x: 5.4086885, y: 0.4215115}
+      - {x: 6.8252316, y: -0.23095334}
+      - {x: 7.5140696, y: -0.5296931}
+      - {x: 8.18292, y: -0.78641677}
+      - {x: 8.824566, y: -0.9847855}
+      - {x: 9.430938, y: -1.1109605}
+      - {x: 10, y: -1.155}
+      - {x: 10.569062, y: -1.1109606}
+      - {x: 11.175434, y: -0.98478556}
+      - {x: 11.817081, y: -0.78641665}
+      - {x: 12.485931, y: -0.52969337}
+      - {x: 13.174767, y: -0.23095322}
+      - {x: 14.5913105, y: 0.42151147}
+      - {x: 15.312683, y: 0.73841727}
+      - {x: 16.041632, y: 1.0236814}
+      - {x: 16.779865, y: 1.2566283}
+      - {x: 17.530693, y: 1.4133708}
+      - {x: 18.296127, y: 1.464357}
+      - {x: 19.0695, y: 1.374109}
+      - {x: 19.641682, y: 1.1803968}
+      - {x: 19.82725, y: 1.1095043}
+      - {x: 20.53572, y: 0.65347433}
+      - {x: 20, y: 0}
+      - {x: 20, y: -50}
+      - {x: 0, y: -50}
+  m_UseDelaunayMesh: 0
