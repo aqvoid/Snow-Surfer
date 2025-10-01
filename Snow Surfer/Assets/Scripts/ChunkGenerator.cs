@@ -53,8 +53,7 @@ public class ChunkGenerator : MonoBehaviour
     {
         for (int i = 0; i < startChunks; i++)
         {
-            int rndPrefab = Random.Range(0, lowChunks.Length);
-            Instantiate(lowChunks[rndPrefab], nextSpawnPosition, Quaternion.identity, transform);
+            Instantiate(lowChunks[0], nextSpawnPosition, Quaternion.identity, transform);
             nextSpawnPosition.x += CHUNKDISTANCE;
         }
 
