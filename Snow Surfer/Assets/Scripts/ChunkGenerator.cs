@@ -17,12 +17,38 @@ public class ChunkGenerator : MonoBehaviour
     private const int CHUNKDISTANCE = 20;
     private Vector2 nextSpawnPosition = Vector2.zero;
     private HeightLevel currentHeight = HeightLevel.Low;
+    private bool lastWasConnector = false;
 
     private void Start()
     {
         SpawnStartChunks();
     }
 
+    private void GenerateLevel()
+    {
+        for (int i = 0; i < maxChunks; i++)
+        {
+            bool useConnector = Random.value < connectorSpawnChance && !lastWasConnector;
+
+            if (useConnector)
+            {
+                HeightLevel newHeight = PickNewHeight(currentHeight);
+                SpawnConnectorChunk(currentHeight, newHeight);
+                currentHeight = newHeight;
+                lastWasConnector = true;
+            }
+            else
+            {
+                SpawnChunk(currentHeight);
+                lastWasConnector = false;
+            }
+        }
+        SpawnFinishChunk(currentHeight);
+    }
+
+
+
+    // === Chunks ========================================================================================== //
     private void SpawnStartChunks()
     {
         for (int i = 0; i < startChunks; i++)
@@ -35,27 +61,6 @@ public class ChunkGenerator : MonoBehaviour
         GenerateLevel();
     }
 
-    private void GenerateLevel()
-    {
-        for (int i = 0; i < maxChunks; i++)
-        {
-            bool useConnector = Random.value < connectorSpawnChance;
-
-            if (useConnector)
-            {
-                HeightLevel newHeight = PickNewHeight(currentHeight);
-                SpawnConnectorChunk(currentHeight, newHeight);
-                currentHeight = newHeight;
-            }
-            else
-            {
-                SpawnChunk(currentHeight);
-            }
-        }
-        SpawnFinishChunk(currentHeight);
-    }
-
-    // === Chunks ========================================================================================== //
     private void SpawnChunk(HeightLevel height)
     {
         GameObject prefab = PickRandomChunk(height);
