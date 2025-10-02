@@ -121,7 +121,7 @@ MonoBehaviour:
       height: 1
       spriteIndex: 0
       corner: 1
-      m_CornerMode: 2
+      m_CornerMode: 1
     - position: {x: 0, y: 20, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
       height: 1
       spriteIndex: 0
       corner: 1
-      m_CornerMode: 2
+      m_CornerMode: 1
   m_SpriteShape: {fileID: 11400000, guid: 7ea90a1600ad8a54bab7bffe0bdf7129, type: 2}
   m_FillPixelPerUnit: 256
   m_StretchTiling: 1
