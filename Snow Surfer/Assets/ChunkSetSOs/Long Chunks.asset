@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba5d1ca10a376644a1ee0a768844519, type: 3}
+  m_Name: Long Chunks
+  m_EditorClassIdentifier: Assembly-CSharp::ChunkSetSO
+  lowChunks:
+  - {fileID: 1976481263086930430, guid: 22db26c51bca6804ab6d96b7e42ec499, type: 3}
+  - {fileID: 1976481263086930430, guid: eb3cb9f3e1f48e1479203c17009c16ba, type: 3}
+  - {fileID: 1976481263086930430, guid: 62b9c9925354f0f42a2d175573b6b050, type: 3}
+  - {fileID: 1976481263086930430, guid: fa840e9c87ec41c4abe5a32b21598f96, type: 3}
+  - {fileID: 1976481263086930430, guid: 47b681846e5555247a59c22f4b327508, type: 3}
+  - {fileID: 1976481263086930430, guid: 79a970755db0a2f40a9930f4a865962d, type: 3}
+  mediumChunks:
+  - {fileID: 1976481263086930430, guid: fd2cf2d10771bfb408152f66ed4d965e, type: 3}
+  - {fileID: 1976481263086930430, guid: 0409506d5a243a040bc91926e42ad342, type: 3}
+  - {fileID: 1976481263086930430, guid: ec44907f5e34c9c4cb61aa698e0a9864, type: 3}
+  - {fileID: 1976481263086930430, guid: f993def997b55dd4a80be097acc81a99, type: 3}
+  - {fileID: 1976481263086930430, guid: 928762a448b256b48b1467c284c83428, type: 3}
+  - {fileID: 1976481263086930430, guid: 1f083443174e82b449f9904f37afd51a, type: 3}
+  highChunks:
+  - {fileID: 1976481263086930430, guid: 70ab0a7fb44a95c4f94227e47e11b238, type: 3}
+  - {fileID: 1976481263086930430, guid: 26595a874c693a34d80bb427ca926e59, type: 3}
+  - {fileID: 1976481263086930430, guid: be07a9a79c43ebe48977284cfa455493, type: 3}
+  - {fileID: 1976481263086930430, guid: d35ef497f4133744a86a0ac2130fe309, type: 3}
+  - {fileID: 1976481263086930430, guid: 1af1ec1ca1fa04746b3d0a666c25336d, type: 3}
+  - {fileID: 1976481263086930430, guid: c9bf2d8fd16abcd4eaad032ad744d8c8, type: 3}

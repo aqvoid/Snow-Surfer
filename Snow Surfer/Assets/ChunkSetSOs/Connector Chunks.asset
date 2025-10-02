@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07c48253285b274093c4ac7584058a9, type: 3}
+  m_Name: Connector Chunks
+  m_EditorClassIdentifier: Assembly-CSharp::ConnectorChunkSetSO
+  connectors:
+  - from: 0
+    to: 1
+    prefab: {fileID: 1976481263086930430, guid: 92786fd34923f5a4fbb308a441b777c1, type: 3}
+  - from: 1
+    to: 0
+    prefab: {fileID: 1976481263086930430, guid: 64aa4518a25861d47b6022b724148ba1, type: 3}
+  - from: 1
+    to: 2
+    prefab: {fileID: 1976481263086930430, guid: 58068ca3e65b10843aaa88f3111b3c5a, type: 3}
+  - from: 2
+    to: 1
+    prefab: {fileID: 1976481263086930430, guid: 4b6f8d8f29aaa464fa1073b29fd39e02, type: 3}
