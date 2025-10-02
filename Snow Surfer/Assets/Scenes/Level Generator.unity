@@ -12059,7 +12059,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: 12, z: -10}
+  m_LocalPosition: {x: 40, y: 12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18007,7 +18007,7 @@ Transform:
   m_GameObject: {fileID: 756545041}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: 12, z: -10}
+  m_LocalPosition: {x: 40, y: 12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18643,7 +18643,7 @@ Transform:
   m_GameObject: {fileID: 1062461105}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 12, z: 0}
+  m_LocalPosition: {x: 30, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25550,30 +25550,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956cd4c3de6fbbf458c772ff6731178f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChunkGenerator
-  startChunks: 4
+  startChunks: 2
   maxChunks: 10
   connectorSpawnChance: 0.3
-  lowChunks:
+  longChunkChance: 0.7
+  shortLowChunks:
   - {fileID: 1976481263086930430, guid: 4ca97a35d441d70459c774f82f468366, type: 3}
   - {fileID: 1976481263086930430, guid: 46168baa8f518f24ca545734c0dd22a6, type: 3}
   - {fileID: 1976481263086930430, guid: d6e29f49285adee4fac52851a4933445, type: 3}
   - {fileID: 1976481263086930430, guid: 2790bbc9293c51d4aaa9e3680d51ed06, type: 3}
   - {fileID: 1976481263086930430, guid: 9ea675a95c96fde40b86395e09b6437b, type: 3}
   - {fileID: 1976481263086930430, guid: 81082fb9d4c64444dae953fab51f9f6c, type: 3}
-  mediumChunks:
+  shortMediumChunks:
   - {fileID: 1976481263086930430, guid: 5fedb0d54f4db4d45bb4bde2e13c46de, type: 3}
   - {fileID: 1976481263086930430, guid: 332662e4e3e62e643a154095ef5bea00, type: 3}
   - {fileID: 1976481263086930430, guid: 5d7eece86542da54c9d9fbae1c180c97, type: 3}
   - {fileID: 1976481263086930430, guid: 352fb400b74f3b2468769421449f2a2d, type: 3}
   - {fileID: 1976481263086930430, guid: 21fb2f3be871ef747bdc76887ca47fcd, type: 3}
   - {fileID: 1976481263086930430, guid: 7184c6575770ef041a6a511eda33f5c3, type: 3}
-  highChunks:
+  shortHighChunks:
   - {fileID: 1976481263086930430, guid: 87391ad844f52304f88ee16b8e9b259e, type: 3}
   - {fileID: 1976481263086930430, guid: 39fe39919df63fc4e98408e017f2a30f, type: 3}
   - {fileID: 1976481263086930430, guid: 30b493ff0afcd76488240aa894bbf912, type: 3}
   - {fileID: 1976481263086930430, guid: 8ef75aed717625c4190b89221721f2b9, type: 3}
   - {fileID: 1976481263086930430, guid: 5879612aaa96a3041bdbcaa089b097bf, type: 3}
   - {fileID: 1976481263086930430, guid: 30f85d551837256448839953e665d7ea, type: 3}
+  longLowChunks:
+  - {fileID: 1976481263086930430, guid: 22db26c51bca6804ab6d96b7e42ec499, type: 3}
+  - {fileID: 1976481263086930430, guid: eb3cb9f3e1f48e1479203c17009c16ba, type: 3}
+  - {fileID: 1976481263086930430, guid: 62b9c9925354f0f42a2d175573b6b050, type: 3}
+  - {fileID: 1976481263086930430, guid: fa840e9c87ec41c4abe5a32b21598f96, type: 3}
+  - {fileID: 1976481263086930430, guid: 47b681846e5555247a59c22f4b327508, type: 3}
+  - {fileID: 1976481263086930430, guid: 79a970755db0a2f40a9930f4a865962d, type: 3}
+  longMediumChunks:
+  - {fileID: 1976481263086930430, guid: fd2cf2d10771bfb408152f66ed4d965e, type: 3}
+  - {fileID: 1976481263086930430, guid: 0409506d5a243a040bc91926e42ad342, type: 3}
+  - {fileID: 1976481263086930430, guid: ec44907f5e34c9c4cb61aa698e0a9864, type: 3}
+  - {fileID: 1976481263086930430, guid: f993def997b55dd4a80be097acc81a99, type: 3}
+  - {fileID: 1976481263086930430, guid: 928762a448b256b48b1467c284c83428, type: 3}
+  - {fileID: 1976481263086930430, guid: 1f083443174e82b449f9904f37afd51a, type: 3}
+  longHighChunks:
+  - {fileID: 1976481263086930430, guid: 70ab0a7fb44a95c4f94227e47e11b238, type: 3}
+  - {fileID: 1976481263086930430, guid: 26595a874c693a34d80bb427ca926e59, type: 3}
+  - {fileID: 1976481263086930430, guid: be07a9a79c43ebe48977284cfa455493, type: 3}
+  - {fileID: 1976481263086930430, guid: d35ef497f4133744a86a0ac2130fe309, type: 3}
+  - {fileID: 1976481263086930430, guid: 1af1ec1ca1fa04746b3d0a666c25336d, type: 3}
+  - {fileID: 1976481263086930430, guid: c9bf2d8fd16abcd4eaad032ad744d8c8, type: 3}
   connectorChunks:
   - {fileID: 1976481263086930430, guid: 92786fd34923f5a4fbb308a441b777c1, type: 3}
   - {fileID: 1976481263086930430, guid: 64aa4518a25861d47b6022b724148ba1, type: 3}

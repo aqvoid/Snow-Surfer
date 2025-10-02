@@ -2,19 +2,29 @@ using UnityEngine;
 
 public class ChunkGenerator : MonoBehaviour
 {
-    [Header("Settings")]
-    [SerializeField] private int startChunks = 4;
+    [Header("=== Settings ===")]
+    [SerializeField] private int startChunks = 2;
     [SerializeField] private int maxChunks = 10;
     [SerializeField] private float connectorSpawnChance = 0.2f;
+    [SerializeField, Range(0f, 1f)] private float longChunkChance = 0.7f;
 
-    [Header("Prefabs")]
-    [SerializeField] private GameObject[] lowChunks;
-    [SerializeField] private GameObject[] mediumChunks;
-    [SerializeField] private GameObject[] highChunks;
+    [Header("===== Prefabs =====")]
+    [Header("=== Short Chunks ===")]
+    [SerializeField] private GameObject[] shortLowChunks;
+    [SerializeField] private GameObject[] shortMediumChunks;
+    [SerializeField] private GameObject[] shortHighChunks;
+
+    [Header("=== Long Chunks ===")]
+    [SerializeField] private GameObject[] longLowChunks;
+    [SerializeField] private GameObject[] longMediumChunks;
+    [SerializeField] private GameObject[] longHighChunks;
+
+    [Header("=== Other Chunks ===")]
     [SerializeField] private GameObject[] connectorChunks;
     [SerializeField] private GameObject[] finishChunks;
-    
-    private const int CHUNKDISTANCE = 20;
+
+    private const int SHORT_CHUNK_DISTANCE = 20;
+    private const int LONG_CHUNK_DISTANCE = 40;
     private Vector2 nextSpawnPosition = Vector2.zero;
     private HeightLevel currentHeight = HeightLevel.Low;
     private bool lastWasConnector = false;
@@ -53,8 +63,8 @@ public class ChunkGenerator : MonoBehaviour
     {
         for (int i = 0; i < startChunks; i++)
         {
-            Instantiate(lowChunks[0], nextSpawnPosition, Quaternion.identity, transform);
-            nextSpawnPosition.x += CHUNKDISTANCE;
+            Instantiate(longLowChunks[0], nextSpawnPosition, Quaternion.identity, transform);
+            nextSpawnPosition.x += LONG_CHUNK_DISTANCE;
         }
 
         GenerateLevel();
@@ -62,9 +72,11 @@ public class ChunkGenerator : MonoBehaviour
 
     private void SpawnChunk(HeightLevel height)
     {
-        GameObject prefab = PickRandomChunk(height);
+        bool isLong = Random.value < longChunkChance;
+
+        GameObject prefab = PickRandomChunk(height, isLong);
         Instantiate(prefab, nextSpawnPosition, Quaternion.identity, transform);
-        nextSpawnPosition.x += CHUNKDISTANCE;
+        nextSpawnPosition.x += isLong ? LONG_CHUNK_DISTANCE : SHORT_CHUNK_DISTANCE;
     }
 
     private void SpawnConnectorChunk(HeightLevel from, HeightLevel to)
@@ -79,30 +91,33 @@ public class ChunkGenerator : MonoBehaviour
         if (prefab != null)
         {
             Instantiate(prefab, nextSpawnPosition, Quaternion.identity, transform);
-            nextSpawnPosition.x += CHUNKDISTANCE;
+            nextSpawnPosition.x += SHORT_CHUNK_DISTANCE;
         }
     }
     private void SpawnFinishChunk(HeightLevel height)
     {
         GameObject prefab = PickRandomFinishChunk(height);
         Instantiate(prefab, nextSpawnPosition, Quaternion.identity, transform);
-        nextSpawnPosition.x += CHUNKDISTANCE;
-
-        for (int i = 0; i < 4; i++)
-        {
-            Instantiate(PickRandomPostFinishChunks(height), nextSpawnPosition, Quaternion.identity, transform);
-            nextSpawnPosition.x += CHUNKDISTANCE;
-        }
+        nextSpawnPosition.x += LONG_CHUNK_DISTANCE;
     }
 
     // === Random Chunk Pickers ============================================================================ //
-    private GameObject PickRandomChunk(HeightLevel height)
+    private GameObject PickRandomChunk(HeightLevel height, bool isLong)
     {
         switch (height)
         {
-            case HeightLevel.Low: return lowChunks[Random.Range(0, lowChunks.Length)];
-            case HeightLevel.Medium: return mediumChunks[Random.Range(0, mediumChunks.Length)];
-            case HeightLevel.High: return highChunks[Random.Range(0, highChunks.Length)];
+            case HeightLevel.Low:
+                return isLong
+                    ? longLowChunks[Random.Range(0, longLowChunks.Length)]
+                    : shortLowChunks[Random.Range(0, shortLowChunks.Length)];
+            case HeightLevel.Medium:
+                return isLong
+                    ? longMediumChunks[Random.Range(0, longMediumChunks.Length)]
+                    : shortMediumChunks[Random.Range(0, shortMediumChunks.Length)];
+            case HeightLevel.High:
+                return isLong
+                    ? longHighChunks[Random.Range(0, longHighChunks.Length)]
+                    : shortHighChunks[Random.Range(0, shortHighChunks.Length)];
         }
         return null;
     }
@@ -114,17 +129,6 @@ public class ChunkGenerator : MonoBehaviour
             case HeightLevel.Low: return finishChunks[0];
             case HeightLevel.Medium: return finishChunks[1];
             case HeightLevel.High: return finishChunks[2];
-        }
-        return null;
-    }
-
-    private GameObject PickRandomPostFinishChunks(HeightLevel height)
-    {
-        switch (height)
-        {
-            case HeightLevel.Low: return lowChunks[0];
-            case HeightLevel.Medium: return mediumChunks[0];
-            case HeightLevel.High: return highChunks[0];
         }
         return null;
     }
