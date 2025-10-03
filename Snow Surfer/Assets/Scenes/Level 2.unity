@@ -16700,9 +16700,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956cd4c3de6fbbf458c772ff6731178f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChunkGenerator
-  chunksGenerateAmount: 10
-  connectorSpawnChance: 0.1
-  longChunkChance: 0.9
+  chunksGenerateAmount: 15
+  connectorSpawnChance: 0.25
+  longChunkChance: 0.75
   startHeight: 0
   shortChunks: {fileID: 11400000, guid: 05497746d84a4df45acb0e3225862991, type: 2}
   longChunks: {fileID: 11400000, guid: dfa8ad9299859b04c82c7e3943eff135, type: 2}
