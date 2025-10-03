@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4544484865506059205}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1971053207 &6533358642255108419
@@ -169,21 +170,21 @@ MonoBehaviour:
   m_Modifiers: []
   m_ColliderSegment:
   - {x: 0, y: -50}
-  - {x: 0, y: -0.637037}
-  - {x: -0.4662166, y: 0.70474607}
-  - {x: 0.28050905, y: 1.194595}
-  - {x: 1.1447489, y: 1.751879}
-  - {x: 2.2764945, y: 2.4696414}
-  - {x: 3.6314907, y: 3.3124151}
-  - {x: 5.165577, y: 4.244777}
-  - {x: 6.834714, y: 5.231347}
-  - {x: 8.595053, y: 6.2368145}
-  - {x: 10.403048, y: 7.225958}
-  - {x: 12.215685, y: 8.1636915}
-  - {x: 13.990928, y: 9.015118}
-  - {x: 15.688652, y: 9.745549}
-  - {x: 17.272896, y: 10.320299}
-  - {x: 18.71756, y: 10.7029705}
+  - {x: 0, y: 0.84499997}
+  - {x: 1.0637038, y: 0.97240746}
+  - {x: 1.9514273, y: 1.2790413}
+  - {x: 3.1548333, y: 1.8020225}
+  - {x: 4.4652557, y: 2.49195}
+  - {x: 5.8552017, y: 3.313329}
+  - {x: 7.301604, y: 4.2298574}
+  - {x: 8.783916, y: 5.2053294}
+  - {x: 10.283177, y: 6.203849}
+  - {x: 11.781603, y: 7.1898565}
+  - {x: 13.2626095, y: 8.128143}
+  - {x: 14.711182, y: 8.983803}
+  - {x: 16.114834, y: 9.722022}
+  - {x: 17.465504, y: 10.30719}
+  - {x: 18.762484, y: 10.699522}
   - {x: 20, y: 10.845001}
   - {x: 20, y: -50}
   - {x: 0, y: -50}
@@ -235,22 +236,67 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: -50}
-      - {x: 0, y: -0.637037}
-      - {x: -0.4662166, y: 0.70474607}
-      - {x: 0.28050905, y: 1.194595}
-      - {x: 1.1447489, y: 1.751879}
-      - {x: 2.2764945, y: 2.4696414}
-      - {x: 3.6314907, y: 3.3124151}
-      - {x: 5.165577, y: 4.244777}
-      - {x: 6.834714, y: 5.231347}
-      - {x: 8.595053, y: 6.2368145}
-      - {x: 10.403048, y: 7.225958}
-      - {x: 12.215685, y: 8.1636915}
-      - {x: 13.990928, y: 9.015118}
-      - {x: 15.688652, y: 9.745549}
-      - {x: 17.272896, y: 10.320299}
-      - {x: 18.71756, y: 10.7029705}
+      - {x: 0, y: 0.84499997}
+      - {x: 1.0637038, y: 0.97240746}
+      - {x: 1.9514273, y: 1.2790413}
+      - {x: 3.1548333, y: 1.8020225}
+      - {x: 4.4652557, y: 2.49195}
+      - {x: 5.8552017, y: 3.313329}
+      - {x: 7.301604, y: 4.2298574}
+      - {x: 8.783916, y: 5.2053294}
+      - {x: 10.283177, y: 6.203849}
+      - {x: 11.781603, y: 7.1898565}
+      - {x: 13.2626095, y: 8.128143}
+      - {x: 14.711182, y: 8.983803}
+      - {x: 16.114834, y: 9.722022}
+      - {x: 17.465504, y: 10.30719}
+      - {x: 18.762484, y: 10.699522}
       - {x: 20, y: 10.845001}
       - {x: 20, y: -50}
       - {x: 0, y: -50}
   m_UseDelaunayMesh: 0
+--- !u!1 &6691470092420520637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4544484865506059205}
+  - component: {fileID: 8377630484228578126}
+  m_Layer: 7
+  m_Name: PowerupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4544484865506059205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6691470092420520637}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10, y: 9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8412141419393354235}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8377630484228578126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6691470092420520637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4804b7243ff9ca4ebcec9258ae06a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Powerup
+  powerupsSO: {fileID: 11400000, guid: 58c86302ce5fa1640ad54f9c2ed75fc8, type: 2}

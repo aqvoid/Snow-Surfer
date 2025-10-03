@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6f6397f2d739447b3c8d5078bca837, type: 3}
   m_Name: Start Chunks
   m_EditorClassIdentifier: Assembly-CSharp::StartChunkSetSO
-  lowStart: {fileID: 1976481263086930430, guid: 22db26c51bca6804ab6d96b7e42ec499, type: 3}
-  mediumStart: {fileID: 1976481263086930430, guid: fd2cf2d10771bfb408152f66ed4d965e, type: 3}
-  highStart: {fileID: 1976481263086930430, guid: 70ab0a7fb44a95c4f94227e47e11b238, type: 3}
+  lowStart: {fileID: 1976481263086930430, guid: f5922c9abd9782c4faa8a3223944f380, type: 3}
+  mediumStart: {fileID: 1976481263086930430, guid: b7b70b1f1f11ff14aa06b966c050c979, type: 3}
+  highStart: {fileID: 1976481263086930430, guid: c0b65ed5c49b17b4aab10964dec2749c, type: 3}

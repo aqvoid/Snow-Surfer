@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1742440430670004267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 963847286066748151}
+  - component: {fileID: 1503170433244594979}
+  m_Layer: 7
+  m_Name: PowerupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &963847286066748151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742440430670004267}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8412141419393354235}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503170433244594979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742440430670004267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4804b7243ff9ca4ebcec9258ae06a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Powerup
+  powerupsSO: {fileID: 11400000, guid: 58c86302ce5fa1640ad54f9c2ed75fc8, type: 2}
 --- !u!1 &1976481263086930430
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +76,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 963847286066748151}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1971053207 &6533358642255108419
@@ -191,19 +237,20 @@ MonoBehaviour:
   - {x: 7.4408994, y: -1.41046}
   - {x: 8.237251, y: -1.5406885}
   - {x: 9.088158, y: -1.6249769}
-  - {x: 9.988632, y: -1.6550765}
-  - {x: 10.443008, y: -1.6278319}
-  - {x: 10.968339, y: -1.5475118}
-  - {x: 11.56288, y: -1.418314}
-  - {x: 12.211298, y: -1.2476053}
-  - {x: 12.900841, y: -1.0438513}
-  - {x: 13.620348, y: -0.8158821}
-  - {x: 15.860347, y: -0.07588172}
-  - {x: 16.604546, y: 0.15985227}
-  - {x: 17.334259, y: 0.3753579}
-  - {x: 18.042881, y: 0.5616863}
-  - {x: 18.725376, y: 0.70952535}
-  - {x: 19.379303, y: 0.80846465}
+  - {x: 10, y: -1.6550002}
+  - {x: 10.911843, y: -1.6249771}
+  - {x: 11.762749, y: -1.5406886}
+  - {x: 12.559101, y: -1.4104602}
+  - {x: 13.306917, y: -1.2422681}
+  - {x: 14.012066, y: -1.0438161}
+  - {x: 14.680253, y: -0.8226503}
+  - {x: 15.317059, y: -0.58626986}
+  - {x: 15.928063, y: -0.34224904}
+  - {x: 17.095945, y: 0.13735554}
+  - {x: 17.665442, y: 0.3561945}
+  - {x: 18.234493, y: 0.54854953}
+  - {x: 18.81017, y: 0.7032629}
+  - {x: 19.398472, y: 0.80711615}
   - {x: 20, y: 0.84499997}
   - {x: 20, y: -50}
   - {x: 0, y: -50}
@@ -269,19 +316,20 @@ PolygonCollider2D:
       - {x: 7.4408994, y: -1.41046}
       - {x: 8.237251, y: -1.5406885}
       - {x: 9.088158, y: -1.6249769}
-      - {x: 9.988632, y: -1.6550765}
-      - {x: 10.443008, y: -1.6278319}
-      - {x: 10.968339, y: -1.5475118}
-      - {x: 11.56288, y: -1.418314}
-      - {x: 12.211298, y: -1.2476053}
-      - {x: 12.900841, y: -1.0438513}
-      - {x: 13.620348, y: -0.8158821}
-      - {x: 15.860347, y: -0.07588172}
-      - {x: 16.604546, y: 0.15985227}
-      - {x: 17.334259, y: 0.3753579}
-      - {x: 18.042881, y: 0.5616863}
-      - {x: 18.725376, y: 0.70952535}
-      - {x: 19.379303, y: 0.80846465}
+      - {x: 10, y: -1.6550002}
+      - {x: 10.911843, y: -1.6249771}
+      - {x: 11.762749, y: -1.5406886}
+      - {x: 12.559101, y: -1.4104602}
+      - {x: 13.306917, y: -1.2422681}
+      - {x: 14.012066, y: -1.0438161}
+      - {x: 14.680253, y: -0.8226503}
+      - {x: 15.317059, y: -0.58626986}
+      - {x: 15.928063, y: -0.34224904}
+      - {x: 17.095945, y: 0.13735554}
+      - {x: 17.665442, y: 0.3561945}
+      - {x: 18.234493, y: 0.54854953}
+      - {x: 18.81017, y: 0.7032629}
+      - {x: 19.398472, y: 0.80711615}
       - {x: 20, y: 0.84499997}
       - {x: 20, y: -50}
       - {x: 0, y: -50}

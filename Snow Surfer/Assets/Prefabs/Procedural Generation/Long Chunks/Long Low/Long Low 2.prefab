@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1370920520574991351}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1971053207 &6533358642255108419
@@ -230,7 +231,7 @@ MonoBehaviour:
   - {x: 23.055395, y: 3.4631014}
   - {x: 23.901836, y: 3.974278}
   - {x: 24.808575, y: 4.4601364}
-  - {x: 25.768456, y: 4.902396}
+  - {x: 25.768456, y: 4.9023952}
   - {x: 26.774647, y: 5.282254}
   - {x: 27.820488, y: 5.580084}
   - {x: 28.899105, y: 5.775071}
@@ -242,12 +243,12 @@ MonoBehaviour:
   - {x: 34.227844, y: 4.366497}
   - {x: 34.809494, y: 3.8642707}
   - {x: 35.340904, y: 3.3532958}
-  - {x: 35.84165, y: 2.8540392}
-  - {x: 36.329483, y: 2.3842692}
+  - {x: 35.84165, y: 2.8540387}
+  - {x: 36.329483, y: 2.3842702}
   - {x: 36.820442, y: 1.9590895}
   - {x: 37.330246, y: 1.5902166}
-  - {x: 37.879482, y: 1.2871647}
-  - {x: 38.484985, y: 1.0525612}
+  - {x: 37.877182, y: 1.285799}
+  - {x: 38.484985, y: 1.0525613}
   - {x: 39.182858, y: 0.9002603}
   - {x: 40, y: 0.84499997}
   - {x: 40, y: -50}
@@ -337,7 +338,7 @@ PolygonCollider2D:
       - {x: 23.055395, y: 3.4631014}
       - {x: 23.901836, y: 3.974278}
       - {x: 24.808575, y: 4.4601364}
-      - {x: 25.768456, y: 4.902396}
+      - {x: 25.768456, y: 4.9023952}
       - {x: 26.774647, y: 5.282254}
       - {x: 27.820488, y: 5.580084}
       - {x: 28.899105, y: 5.775071}
@@ -349,14 +350,59 @@ PolygonCollider2D:
       - {x: 34.227844, y: 4.366497}
       - {x: 34.809494, y: 3.8642707}
       - {x: 35.340904, y: 3.3532958}
-      - {x: 35.84165, y: 2.8540392}
-      - {x: 36.329483, y: 2.3842692}
+      - {x: 35.84165, y: 2.8540387}
+      - {x: 36.329483, y: 2.3842702}
       - {x: 36.820442, y: 1.9590895}
       - {x: 37.330246, y: 1.5902166}
-      - {x: 37.879482, y: 1.2871647}
-      - {x: 38.484985, y: 1.0525612}
+      - {x: 37.877182, y: 1.285799}
+      - {x: 38.484985, y: 1.0525613}
       - {x: 39.182858, y: 0.9002603}
       - {x: 40, y: 0.84499997}
       - {x: 40, y: -50}
       - {x: 0, y: -50}
   m_UseDelaunayMesh: 0
+--- !u!1 &4278454457523247447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370920520574991351}
+  - component: {fileID: 1120472222986305931}
+  m_Layer: 7
+  m_Name: PowerupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1370920520574991351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4278454457523247447}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20, y: 4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8412141419393354235}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1120472222986305931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4278454457523247447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4804b7243ff9ca4ebcec9258ae06a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Powerup
+  powerupsSO: {fileID: 11400000, guid: 58c86302ce5fa1640ad54f9c2ed75fc8, type: 2}

@@ -3,7 +3,6 @@ using UnityEngine;
 public class ChunkGenerator : MonoBehaviour
 {
     [Header("=== Settings ===")]
-    [SerializeField] private int startChunksAmount = 2;
     [SerializeField] private int chunksGenerateAmount = 10;
     [SerializeField, Range(0f, 1f), Tooltip("The more chance, the more height changes will be")] private float connectorSpawnChance = 0.2f;
     [SerializeField, Range(0f, 1f), Tooltip("The more chance, the more long chunks will be, instead of short ones")] private float longChunkChance = 0.7f;
@@ -20,12 +19,13 @@ public class ChunkGenerator : MonoBehaviour
 
     private const int SHORT_CHUNK_DISTANCE = 20;
     private const int LONG_CHUNK_DISTANCE = 40;
+    private const int START_CHUNK_DISTANCE = 80;
     private Vector2 nextSpawnPosition = Vector2.zero;
     private bool lastWasConnector = false;
 
     private void Start()
     {
-        SpawnStartChunks();
+        SpawnStartChunks(startHeight);
     }
 
     private void GenerateLevel()
@@ -53,13 +53,11 @@ public class ChunkGenerator : MonoBehaviour
 
 
     // === Chunks ========================================================================================== //
-    private void SpawnStartChunks()
+    private void SpawnStartChunks(HeightLevel height)
     {
-        for (int i = 0; i < startChunksAmount; i++)
-        {
-            Instantiate(longChunks.GetStartChunk(startHeight), nextSpawnPosition, Quaternion.identity, transform);
-            nextSpawnPosition.x += LONG_CHUNK_DISTANCE;
-        }
+        GameObject chunk = startChunks.GetStartChunk(height);
+        Instantiate(chunk, nextSpawnPosition, Quaternion.identity, transform);
+        nextSpawnPosition.x += START_CHUNK_DISTANCE;
 
         GenerateLevel();
     }
@@ -68,26 +66,21 @@ public class ChunkGenerator : MonoBehaviour
     {
         bool isLong = Random.value < longChunkChance;
 
-        GameObject prefab = (isLong ? longChunks : shortChunks).GetRandomChunk(height);
-        Instantiate(prefab, nextSpawnPosition, Quaternion.identity, transform);
+        GameObject chunk = (isLong ? longChunks : shortChunks).GetRandomChunk(height);
+        Instantiate(chunk, nextSpawnPosition, Quaternion.identity, transform);
         nextSpawnPosition.x += isLong ? LONG_CHUNK_DISTANCE : SHORT_CHUNK_DISTANCE;
     }
 
     private void SpawnConnectorChunk(HeightLevel from, HeightLevel to)
     {
-        GameObject prefab = connectorChunks.GetConnector(from, to);
-
-        if (prefab != null)
-        {
-            Instantiate(prefab, nextSpawnPosition, Quaternion.identity, transform);
-            nextSpawnPosition.x += SHORT_CHUNK_DISTANCE;
-        }
+        GameObject chunk = connectorChunks.GetConnector(from, to);
+        Instantiate(chunk, nextSpawnPosition, Quaternion.identity, transform);
+        nextSpawnPosition.x += SHORT_CHUNK_DISTANCE;
     }
     private void SpawnFinishChunk(HeightLevel height)
     {
-        GameObject prefab = finishChunks.GetFinishChunk(height);
-        Instantiate(prefab, nextSpawnPosition, Quaternion.identity, transform);
-        nextSpawnPosition.x += LONG_CHUNK_DISTANCE;
+        GameObject chunk = finishChunks.GetFinishChunk(height);
+        Instantiate(chunk, nextSpawnPosition, Quaternion.identity, transform);
     }
 
     // === Height =================================================================================== //
