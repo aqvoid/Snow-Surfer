@@ -12,24 +12,25 @@ public class LevelProgressionUI : MonoBehaviour
     private void Start()
     {
         currentLevelText.text = $"Level: {LevelManager.Instance.CurrentLevelIndex}";
-        characterSelectionCanvas.SetActive(true);
-        currentLevelText.gameObject.SetActive(false);
-        finishPanel.SetActive(false);
+        if (currentLevelText.isActiveAndEnabled) currentLevelText.gameObject.SetActive(false);
+        if (!characterSelectionCanvas.activeInHierarchy) characterSelectionCanvas.SetActive(true);
+        if (finishPanel.activeInHierarchy) finishPanel.SetActive(false);
+        if (scoreCanvas.activeInHierarchy) scoreCanvas.SetActive(false);
     }
 
     public void BeginGame()
     {
-        characterSelectionCanvas.SetActive(false);
-        currentLevelText.gameObject.SetActive(true);
-        scoreCanvas.SetActive(true);
+        if (characterSelectionCanvas.activeInHierarchy) characterSelectionCanvas.SetActive(false);
+        if (!currentLevelText.isActiveAndEnabled) currentLevelText.gameObject.SetActive(true);
+        if (!scoreCanvas.activeInHierarchy) scoreCanvas.SetActive(true);
         Time.timeScale = 1f;
     }
 
     public void EndGame()
     {
-        finishPanel.SetActive(true);
-        currentLevelText.gameObject.SetActive(false);
-        scoreCanvas.SetActive(false);
+        if (!finishPanel.activeInHierarchy) finishPanel.SetActive(true);
+        if (currentLevelText.isActiveAndEnabled) currentLevelText.gameObject.SetActive(false);
+        if (scoreCanvas.activeInHierarchy) scoreCanvas.SetActive(false);
         Time.timeScale = 0f;
     }
 

@@ -7,8 +7,6 @@ public class LevelManager : MonoBehaviour
 
     public int CurrentLevelIndex { get; private set; }
 
-    private LevelProgressionUI levelUI;
-
     private void Awake()
     {
         if (Instance == null)
@@ -16,14 +14,13 @@ public class LevelManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             CurrentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-
-            levelUI = FindAnyObjectByType<LevelProgressionUI>();
         }
         else
         {
             Destroy(gameObject);
         }
     }
+
     public void RestartLevel() => SceneManager.LoadScene(CurrentLevelIndex);
     public void LoadNextLevel()
     {
@@ -36,6 +33,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
+            LevelProgressionUI levelUI = FindAnyObjectByType<LevelProgressionUI>();
             levelUI.EndGame();
         }
 
