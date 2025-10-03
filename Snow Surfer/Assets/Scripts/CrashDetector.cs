@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CrashDetector : MonoBehaviour
 {
@@ -28,6 +27,6 @@ public class CrashDetector : MonoBehaviour
 
     private void ReloadScene()
     {
-        SceneManager.LoadScene(0);
+        LevelManager.Instance.RestartLevel();
     }
 }

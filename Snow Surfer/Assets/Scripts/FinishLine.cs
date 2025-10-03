@@ -1,11 +1,11 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
-    [SerializeField] private int restartDelay = 1;
+    [SerializeField] private int delay = 1;
     
     private ParticleSystem finishParticles;
+    private bool triggered = false;
 
     private void Awake()
     {
@@ -16,15 +16,13 @@ public class FinishLine : MonoBehaviour
     {
         int layerIndex = LayerMask.NameToLayer("Player");
 
-        if (collision.gameObject.layer == layerIndex)
+        if (collision.gameObject.layer == layerIndex && !triggered)
         {
+            triggered = true;
             finishParticles.Play();
-            Invoke("NextScene", restartDelay);
+            Invoke("LoadNext", delay);
         }
     }
 
-    private void NextScene()
-    {
-        SceneManager.LoadScene(0);
-    }
+    private void LoadNext() => LevelManager.Instance.LoadNextLevel();
 }
