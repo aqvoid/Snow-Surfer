@@ -21,12 +21,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void FinalMessage()
-    {
-        // Here should be final message: You completed the game, thank you
-        
-    }
-
     public void RestartLevel() => SceneManager.LoadScene(CurrentLevelIndex);
     public void LoadNextLevel()
     {
@@ -39,7 +33,8 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            FinalMessage();
+            LevelProgressionUI levelUI = FindAnyObjectByType<LevelProgressionUI>();
+            levelUI.EndGame();
         }
 
     }
