@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         totalAngle += Mathf.DeltaAngle(startAngle, currentAngle);
 
-        if (totalAngle > 350f || totalAngle < -350f)
+        if (totalAngle > 320f || totalAngle < -320f)
         {
             scoreManager.AddFlips(1);
             scoreManager.AddScore(100);
