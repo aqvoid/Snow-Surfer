@@ -17,6 +17,11 @@ A 2D arcade game built with Unity where the player rides a snowboard down snowy 
 
 ## My Improvements After Completing the Project (WIP!)
 - General performance and code readability improvements
+- Procedural random generation
+- 6 levels with random generation with progression
+- Powerup random generation with chance
+- Current Level Text
+- Randomly generated environment sprites  
 
 ## How to run
 1. Install the latest build SnowSurfer_vX.X.zip from Releases [https://github.com/aqvoid/Snow-Surfer/releases]
