@@ -2,28 +2,27 @@ using UnityEngine;
 
 public class CharacterSelectionManager : MonoBehaviour
 {
-    [SerializeField] private GameObject scoreCanvas;
+    [Header("=== References ===")]
+    [SerializeField] private CanvasController canvasController;
+
+    [Header("=== Sprites ===")]
     [SerializeField] private GameObject dinoSprite;
     [SerializeField] private GameObject frogSprite;
 
-    private void Start() => Time.timeScale = 0;
-
-    private void BeginGame()
+    private void Start()
     {
-        Time.timeScale = 1;
-        scoreCanvas.SetActive(true);
-        gameObject.SetActive(false);
+        dinoSprite.SetActive(false);
+        frogSprite.SetActive(false);
+    }
+    
+
+    private void ActivateCharacterSprite(GameObject character)
+    {
+        character.SetActive(true);
+        canvasController.BeginGame();
     }
 
-    public void ChooseDino()
-    {
-        dinoSprite.SetActive(true);
-        BeginGame();
-    }
+    public void ChooseDinoButton() => ActivateCharacterSprite(dinoSprite);
 
-    public void ChooseFrog()
-    {
-        frogSprite.SetActive(true);
-        BeginGame();
-    }
+    public void ChooseFrogButton() => ActivateCharacterSprite(frogSprite);
 }

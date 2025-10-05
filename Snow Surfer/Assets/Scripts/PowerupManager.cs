@@ -3,13 +3,14 @@ using UnityEngine;
 public class PowerupManager : MonoBehaviour
 {
     [SerializeField] private PowerupSO powerupSO;
-    [SerializeField] private PlayerController playerController;
 
+    private PlayerController playerController;
     private SpriteRenderer powerupSprite;
 
     private void Awake()
     {
-        powerupSprite = GetComponent<SpriteRenderer>();    
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        powerupSprite = GetComponent<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
