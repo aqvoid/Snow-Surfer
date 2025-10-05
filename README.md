@@ -15,7 +15,7 @@ A 2D arcade game built with Unity where the player rides a snowboard down snowy 
 - Simple controls and movement
 - Trick system (flips for extra score)
 
-## My Improvements After Completing the Project (WIP!)
+## My Improvements After Completing the Project
 - General performance and code readability improvements
 - Procedural random generation
 - 6 levels with random generation with progression
