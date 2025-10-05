@@ -33,9 +33,14 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            LevelProgressionUI levelUI = FindAnyObjectByType<LevelProgressionUI>();
-            levelUI.EndGame();
+            FindAnyObjectByType<CanvasController>().EndGame();
         }
 
+    }
+
+    public void RestartWholeGame()
+    {
+        CurrentLevelIndex = 0;
+        SceneManager.LoadScene(CurrentLevelIndex);
     }
 }
