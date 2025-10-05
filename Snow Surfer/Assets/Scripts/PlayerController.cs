@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("=== References ===")]
     [SerializeField] private SurfaceEffector2D effector;
-    [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private InfoUI infoUI;
 
     private Rigidbody2D rb;
     private InputAction moveAction;
@@ -69,8 +69,8 @@ public class PlayerController : MonoBehaviour
 
         if (totalAngle > 320f || totalAngle < -320f)
         {
-            scoreManager.AddFlips(1);
-            scoreManager.AddScore(100);
+            infoUI.AddFlips(1);
+            infoUI.AddScore(100);
             totalAngle = 0f;
         }
 

@@ -416,12 +416,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130790645}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2018110684}
+  m_Father: {fileID: 1710015245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -10972,7 +10972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &656377571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11050,7 +11050,7 @@ RectTransform:
   m_Children:
   - {fileID: 1442204466}
   - {fileID: 87353475}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1359913041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11069,7 +11069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c1a1a6590f4da4ebcc82016957b4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectionManager
-  levelProgressionCanvas: {fileID: 2018110680}
+  canvasController: {fileID: 1359913042}
   dinoSprite: {fileID: 195699930}
   frogSprite: {fileID: 1634560214}
 --- !u!1 &756545041
@@ -11562,7 +11562,7 @@ MonoBehaviour:
   boostSpeed: 20
   powerupParticles: {fileID: 1280261760}
   effector: {fileID: 1645046501}
-  scoreManager: {fileID: 1710015246}
+  infoUI: {fileID: 1710015246}
 --- !u!58 &1062461112
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11781,10 +11781,10 @@ RectTransform:
   - {fileID: 1386536167}
   m_Father: {fileID: 1442204466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 925, y: -300}
+  m_SizeDelta: {x: 550, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1162598454
 MonoBehaviour:
@@ -11832,7 +11832,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 656377575}
         m_TargetAssemblyTypeName: CharacterSelectionManager, Assembly-CSharp
-        m_MethodName: ChooseFrog
+        m_MethodName: ChooseFrogButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16751,10 +16751,10 @@ RectTransform:
   - {fileID: 1738103016}
   m_Father: {fileID: 1442204466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 275, y: -300}
+  m_SizeDelta: {x: 550, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1315418291
 MonoBehaviour:
@@ -16802,7 +16802,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 656377575}
         m_TargetAssemblyTypeName: CharacterSelectionManager, Assembly-CSharp
-        m_MethodName: ChooseDino
+        m_MethodName: ChooseDinoButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16933,8 +16933,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2018110680}
-        m_TargetAssemblyTypeName: LevelProgressionUI, Assembly-CSharp
+      - m_Target: {fileID: 2018110685}
+        m_TargetAssemblyTypeName: FinishUI, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -16983,6 +16983,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326086949}
   m_CullTransparentMesh: 1
+--- !u!1 &1359913039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1359913041}
+  - component: {fileID: 1359913040}
+  - component: {fileID: 1359913042}
+  m_Layer: 0
+  m_Name: Canvas Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!225 &1359913040
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359913039}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!4 &1359913041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359913039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1710015245}
+  - {fileID: 656377574}
+  - {fileID: 2018110684}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1359913042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359913039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229e13c2eba10574ba9f167288375d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CanvasController
+  infoCanvas: {fileID: 1710015246}
+  characterSelectionCanvas: {fileID: 656377575}
+  finishCanvas: {fileID: 2018110685}
 --- !u!1 &1386536166
 GameObject:
   m_ObjectHideFlags: 0
@@ -17388,12 +17451,12 @@ GameObject:
   - component: {fileID: 1710015242}
   - component: {fileID: 1710015246}
   m_Layer: 5
-  m_Name: Score & Flips Canvas
+  m_Name: Info Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1710015242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17471,7 +17534,8 @@ RectTransform:
   m_Children:
   - {fileID: 887573917}
   - {fileID: 498870679}
-  m_Father: {fileID: 0}
+  - {fileID: 130790646}
+  m_Father: {fileID: 1359913041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -17489,9 +17553,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbc023d65e337cd409220c6036ab2ea1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  m_EditorClassIdentifier: Assembly-CSharp::InfoUI
   scoreText: {fileID: 887573918}
   flipsText: {fileID: 498870677}
+  currentLevelText: {fileID: 130790647}
 --- !u!1 &1738103015
 GameObject:
   m_ObjectHideFlags: 0
@@ -17883,8 +17948,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2018110680}
-        m_TargetAssemblyTypeName: LevelProgressionUI, Assembly-CSharp
+      - m_Target: {fileID: 2018110685}
+        m_TargetAssemblyTypeName: FinishUI, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -17945,30 +18010,14 @@ GameObject:
   - component: {fileID: 2018110683}
   - component: {fileID: 2018110682}
   - component: {fileID: 2018110681}
-  - component: {fileID: 2018110680}
+  - component: {fileID: 2018110685}
   m_Layer: 5
-  m_Name: Level Progression Canvas
+  m_Name: Finish Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2018110680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018110679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52c2750e8358b1448baf61667fc62f8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelProgressionUI
-  scoreCanvas: {fileID: 1710015241}
-  characterSelectionCanvas: {fileID: 656377570}
-  currentLevelText: {fileID: 130790647}
-  finishPanel: {fileID: 1157204385}
+  m_IsActive: 0
 --- !u!114 &2018110681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18044,15 +18093,26 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 130790646}
   - {fileID: 1157204386}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1359913041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2018110685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018110679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c2750e8358b1448baf61667fc62f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FinishUI
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -18061,9 +18121,7 @@ SceneRoots:
   - {fileID: 756545044}
   - {fileID: 619394802}
   - {fileID: 1062461109}
-  - {fileID: 1710015245}
-  - {fileID: 656377574}
-  - {fileID: 2018110684}
+  - {fileID: 1359913041}
   - {fileID: 1826610033}
   - {fileID: 1645046498}
   - {fileID: 1095538076}
